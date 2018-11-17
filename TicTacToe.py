@@ -15,10 +15,7 @@ def is_valid_location(grid,position_choose):
                 print(grid[0][0])
                 return position_choose
 
-            else:
-                position_choose2 = int(input("Choose a different position to draw in from 1-9"))
-                print(position_choose2)
-                return is_valid_location(grid, position_choose2)
+    return True
 
 print(grid)
 print(grid[0][0])
@@ -31,6 +28,9 @@ while not game_over:
         position_choose = int(input("Choose a position to draw in from 1-9"))
         is_valid_location(grid, position_choose)
         position_grid = is_valid_location(grid, position_choose)
+        if position_grid:
+            position_choose = int(input("Choose a position to draw in from 1-9"))
+            is_valid_location(grid, position_choose)
 
         if position_grid == 1:
             grid[0][0] = "x"
@@ -58,7 +58,9 @@ while not game_over:
         position_choose = int(input("Choose a position to draw in from 1-9"))
         is_valid_location(grid, position_choose)
         position_grid = is_valid_location(grid, position_choose)
-        print(position_grid)
+        if position_grid:
+            position_choose = int(input("Choose a position to draw in from 1-9"))
+            is_valid_location(grid, position_choose)
 
         if position_grid == 1:
             grid[0][0] = "o"
