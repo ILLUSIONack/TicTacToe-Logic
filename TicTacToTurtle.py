@@ -83,11 +83,11 @@ def player_blue():
 
 
 def draw_token_on_board(func, player_turn):
+    goto(positions[func])
+
     if player_turn == 0:
-        goto(positions[func])
         player_blue()
-    elif player_turn == 1:
-        goto(positions[func])
+    else:
         player_red()
 
 
@@ -98,7 +98,7 @@ def game_loop():
             user_position = int(numinput("Your turn", "choose a position 1-9", 1, minval=1, maxval=9))
             draw_token_on_board(is_valid_location(grid, user_position), turn)
 
-        elif turn == 1:
+        else:
             user_position = int(numinput("Your turn", "choose a position 1-9", 1, minval=1, maxval=9))
             draw_token_on_board(is_valid_location(grid, user_position), turn)
 
