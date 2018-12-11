@@ -1,2 +1,2 @@
-# TicTacToe-Logic
-TicTacToe Game Logic
+# TicTacToe-Turtle
+TicTacToe Game made in Turtle
